@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@700&display=swap');
+:root {
+    --cardbg: #EBEBD3;
+    --headercolor: #004526;
+    --headertextcolor: #A9BA9D;
+    --bggradientbtm: #F78764;
+  }
+html {min-height: 100%;}
+body{
+    background: linear-gradient(0deg,var(--bggradientbtm) 0%, white 100%);
+    background-size: cover;
+    font-family: Montserrat;
+    height: 100%;}
+.card{
+    background-color: var(--cardbg);
+    border-radius: 10px;
+    height: 600px;
+    width: 90%;
+    margin: 5%;
+    align-self: center;
+    box-shadow: 0px 5px 20px #525151;}
+.header{
+    box-shadow: 0px 1px 4px #9e9e9e;
+    background-color: var(--headercolor);
+    border-radius: 10px 10px 0px 0px;
+    color: var(--headertextcolor);
+    font-size: 38px;
+    text-align: center;
+    padding: 5px;
+    font-family: nunito;
+}
+.cardcontent{
+    padding: 10px;
+}
+button{
+    height: 50px;
+    width:200px;
+    background-color: var(--headercolor);
+    border-radius: 10px;
+    font-family: nunito;
+    color: var(--headertextcolor);
+
+
+
+}
+
+
+
+/*# sourceMappingURL=index.c595e15a.css.map */

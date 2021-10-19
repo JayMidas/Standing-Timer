@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@700&display=swap')
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Monsterrat", sans-serif;
+}
+
+body{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: hsl(225, 100%, 94%);
+    font-size: 16px;
+}
+
+#card-component {
+   width: 80%;
+   border-radius: 10px;
+   margin: auto;
+   margin-top: 10%;
+   margin-bottom: 3rem;
+   background-color: #fff;
+   box-shadow: 0px 10px 20px rgb(185, 184, 184);
+    
+}
+
+.card-header img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.card-body {
+    text-align: center;
+}
+
+h1, p {
+    margin:  5px;
+    color: hsl(223, 47%, 23%);
+
+}
+
+.card-title h1{
+    font-weight: 900;
+    padding-top: 5%;
+    font-family: "Nunito", sans-serif;
+}
+
+.card-info {
+    padding: 1.5rem;
+}
+
+.subcard{
+    padding: 1.5rem;
+    background-color: hsl(225, 100%, 98%);
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10px
+
+}
+
+.subcard .card-plan{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.card-price:hover{
+  cursor: pointer;
+  background-color: #8a85bb;
+}
+
+.plan-name{
+    font-weight: 900;
+}
+
+button{
+    padding: 1.5em;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    margin: 2em 0;
+    background-color: #382AE1;
+    font-weight: 700;
+    color: #fff;
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+
+.cancel {
+    display: inline-block;
+    margin-bottom: 3em;
+    text-decoration: none;
+    color:hsl(223, 47%, 23%);
+    font-weight: 700;
+}
+
+@media only screen and (max-width:325px) {
+
+
+    #card-component {
+        width: 90%;
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width:660px) and (min-width:330px) {
+    #card-component {
+        width: 80%;
+    }
+   
+}
+
+@media only screen and (max-width:1000px) and (min-width:725px){
+    #card-component {
+        width: 70%;
+    }
+}
+/*# sourceMappingURL=index.33fdad38.css.map */

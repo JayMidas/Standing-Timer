@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@700&display=swap&https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+:root {
+    --cardbg: #EBEBD399;
+    --headercolor: #090148;
+    --headertextcolor: #CCCCCC;
+    --mainfontcolor: #333333;
+    --bggradientbtm: #00B28177;
+    --basefont:Courier Prime;
+    --titlefont:Montserrat;
+
+  } 
+
+html {min-height: 100%;}
+
+h1{
+    margin:0em;
+    font-family: var(--titlefont);
+    text-align: center;}
+
+h2{
+    margin:0em;
+    font-family: var(--titlefont);
+    font-size: 32px;
+}
+
+body{
+    background: linear-gradient(0deg,var(--bggradientbtm) 0%, white 100%);
+    background-size: cover;
+    font-size: 24px;
+    font-family: var(--basefont);
+    color: var(--mainfontcolor);
+    height: 100%;}
+
+
+.outcardcol {
+  display: flex;
+  justify-content: center;
+  float:left;
+  width: 30%;
+  padding-top: 150px;
+  }
+
+  .imgbox{
+    clear: left;    
+  }
+
+.cardcol{
+  float:left;
+  width: 66%;
+  margin:auto;
+  padding-top: 80px;
+  }
+
+.incardcol{
+  float:left;
+  width:40%;
+  padding: 0% 5% 5%;
+  }
+
+.cardcentertext{text-align: center;margin: 2em;}
+
+.card{
+  clear: left;    
+  background-color: var(--cardbg);
+  border-radius: 10px;
+  align-self: right;
+  box-shadow: 0px 5px 20px #525151;
+  margin-bottom: 72px;}
+
+.cardheader{
+    background-color: var(--headercolor);
+    color: var(--headertextcolor);
+    font-size: 38px;
+    text-align: center;
+    font-family: var(--titlefont);
+    width:100%;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 0px;
+
+}
+    
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.centerButton {
+    width: 40%;
+    margin: 0px 30%;
+  }
+  
+
+.button1{
+    height: 50px;
+    background-color: var(--headercolor);
+    border-radius: 10px;
+    font-family: nunito;
+    color: var(--headertextcolor);
+    border: 0px;
+    width:100%;
+    transition-duration: 0.4s;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+    margin-bottom:30px
+  }
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button1:active {
+    transition-duration: 0s;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+}

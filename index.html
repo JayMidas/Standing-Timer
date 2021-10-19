@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="outcardcol">
+            <div class="imgbox">
+                <img src="images/standing.png" alt="standing img">
+            </div>
+        </div>
+
+        <div class="cardcol">
+            <div class="card">
+                <div class="cardheader">
+                    <h1>Sitting Timer</h1>
+                </div>
+                <div class="cardcentertext">
+                    <p id="currentStance">Click Start to start your day</p>
+                </div>
+                <div class="row">
+                    <div class="incardcol">
+                        <h2 id="SitTitle">Last Sitting Session</h2>
+                        <p id="SitTime">0:00:00</p>
+                        <h2 id="SitTotalTitle">Total Sitting Time</h2>
+                        <p id="SitTotal">0:00:00</p>
+                    </div>
+                    <div class="incardcol">
+                        <h2 id="StandTitle">Last Standing Session</h2>
+                        <p id="StandTime">00:00</p>
+                        <h2 id="StandTotalTitle">Total Standing Time</h2>
+                        <p id="StandTotal">0:00:00</p>
+                    </div>
+                </div>
+                <div class="centerButton">
+                    <button class="button1" id="changebutton" onclick="changestance()">Start</button>
+                </div>
+            </div>
+            <p>Images by <a href="https://oblik.studio/?ref=remote-work-illustrations-gumroad">Oubilk Studio</a></p>
+            <p>Sound effects obtained from <a href="https://www.zapsplat.com">https://www.zapsplat.com</a></p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
