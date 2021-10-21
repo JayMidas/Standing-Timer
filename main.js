@@ -1,4 +1,3 @@
-let myImage = document.querySelector('img');
 let myButton = document.getElementById('changebutton');
 let sitTimerTitle = document.getElementById('SitTitle');
 let standTimerTitle = document.getElementById('StandTitle');
@@ -29,14 +28,20 @@ let hr;
 let mins;
 let secs;
 
-var alarmsound = new Audio('alarmtone.mp3');
+let alarmsound = new Audio('alarmtone.mp3');
 let alarmtriggered = false;
 let mute = false;
+let alarmInterval;
+let TextFlashInterval;
+
+let red = 1;
+let green = 1;
 
 // Button Functions
 
 function changestance() {
-    alarmtriggered = false;
+    refreshStatus()
+
     if (stance !== "sitting") {
         standToSit();
     } else {
@@ -44,10 +49,24 @@ function changestance() {
     }
 }
 
+function refreshStatus() {
+    document.title = 'Sitting Timer';
+    $('#favicon').attr('href', 'images/favicon.png');
+    red = 1;
+    green = 1;
+    clearInterval(alarmInterval)
+    clearInterval(TextFlashInterval)
+    $('#SitTime').removeClass('warning');
+    $('#StandTime').removeClass('bonus');
+    $('#standingimg').toggleClass('transparent');
+    $('#sittingimg').toggleClass('transparent');
+    alarmtriggered = false;
+
+}
+
 function standToSit() {
-    stance = "sitting";
+    stance = "sitting"
     myButton.innerHTML = "Stand Up"
-    myImage.setAttribute('src', 'images/sitting.png');
     stancetext.innerHTML = stancestem + stance;
     sitTimerTitle.innerHTML = "Current Sitting Session";
     standTimerTitle.innerHTML = "Last Standing Session";
@@ -60,7 +79,6 @@ function standToSit() {
 function sitToStand() {
     stance = "standing";
     myButton.innerHTML = "Sit Down"
-    myImage.setAttribute('src', 'images/standing.png');
     stancetext.innerHTML = stancestem + stance;
     sitTimerTitle.innerHTML = "Last Sitting Session";
     standTimerTitle.innerHTML = "Current Standing Session";
@@ -77,9 +95,12 @@ function sitToStand() {
 function updateSitTimer() {
     timenow = new Date().getTime();
     duration = timenow - timeonclick;
-    if (duration >= 3600000 && !alarmtriggered) {
+    if (duration >= 2000 && !alarmtriggered) {
         alarmtriggered = true
-        sitalarm()
+        document.title = 'Time to Stand!';
+        alarm()
+        alarmInterval = setInterval(alarm, 60000)
+        TextFlashInterval = setInterval(TextFlash, 500, "warning")
     }
 
     durationastext = formatAsTime(duration, "hours")
@@ -93,9 +114,13 @@ function updateSitTimer() {
 function updateStandtimer() {
     timenow = new Date().getTime();
     duration = timenow - timeonclick;
-    if (duration >= 120000 && !alarmtriggered) {
+    if (duration >= 2000 && !alarmtriggered) {
         alarmtriggered = true
-        standalarm()
+        document.title = 'Extra Standing Time';
+        alarm()
+        alarmInterval = setInterval(alarm, 60000)
+        TextFlashInterval = setInterval(TextFlash, 500, "bonus")
+
     }
 
     durationastext = formatAsTime(duration, "minutes")
@@ -104,18 +129,6 @@ function updateStandtimer() {
     standTimerTotal = standTimerTotalOnclick + 1000 * (Math.floor(duration / 1000));
     durationastext = formatAsTime(standTimerTotal, "hours")
     standTimerTotalDisplay.innerHTML = durationastext;
-}
-
-function sitalarm() {
-    if (mute = false) {
-        alarmsound.play()
-    };
-}
-
-function standalarm() {
-    if (mute = false) {
-        alarmsound.play()
-    };
 }
 
 function formatAsTime(duration, format) {
@@ -141,5 +154,26 @@ function formatAsTime(duration, format) {
 }
 
 
+//Alarm Functions 
 
+function alarm() {
+    if (mute === false) {
+        alarmsound.play()
+    }
+}
 
+function TextFlash(alpha) {
+    if (alpha === "warning") {
+        $('#SitTime').toggleClass('warning');
+        if (red === 1) {
+            red = 0;
+            $('#favicon').attr('href', 'images/whiteexclaim.png');
+        } else {
+            red = 1;
+            $('#favicon').attr('href', 'images/redexclaim.png');
+        }
+    }
+    else if (alpha === "bonus") {
+        $('#StandTime').toggleClass('bonus');
+    }
+}

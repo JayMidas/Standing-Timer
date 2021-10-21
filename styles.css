@@ -1,16 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@700&display=swap&https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 :root {
-    --cardbg: #EBEBD399;
+    --cardbg: #EBEBEBBB;
     --headercolor: #090148;
     --headertextcolor: #CCCCCC;
     --mainfontcolor: #333333;
     --bggradientbtm: #00B28177;
+    --warningcolor: red;
+    --bonuscolor:green;
     --basefont:Courier Prime;
     --titlefont:Montserrat;
 
   } 
 
 html {min-height: 100%;}
+
+.imgbox{ 
+  margin:0 auto;
+  clear: left;    
+}
+
+.imgbox img{ 
+position: fixed;
+left:-10px;
+z-index: -1;
+transition: 3s;
+}
+
+.imgbox img.transparent{ 
+  opacity:0;
+  }
+
 
 h1{
     margin:0em;
@@ -31,6 +50,12 @@ body{
     color: var(--mainfontcolor);
     height: 100%;}
 
+p.warning{
+    color:var(--warningcolor)}
+
+    
+p.bonus{
+  color:var(--bonuscolor)}
 
 .outcardcol {
   display: flex;
@@ -40,9 +65,6 @@ body{
   padding-top: 150px;
   }
 
-  .imgbox{
-    clear: left;    
-  }
 
 .cardcol{
   float:left;
