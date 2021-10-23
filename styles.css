@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Nunito:wght@700&display=swap&https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 :root {
     --cardbg: #EBEBEBBB;
+    --drawerbg:#EBEBEB;
     --headercolor: #090148;
     --headertextcolor: #CCCCCC;
     --mainfontcolor: #333333;
@@ -13,6 +14,10 @@
   } 
 
 html {min-height: 100%;}
+
+p.small{
+  font-size: small;
+}
 
 .imgbox{ 
   margin:0 auto;
@@ -30,6 +35,40 @@ transition: 3s;
   opacity:0;
   }
 
+.drawerwrapper{ 
+  position: fixed;
+  left:0px;
+  z-index: 2;
+  transition: 1.5s;
+  padding: 20px 8px;
+  width:35%;
+  box-sizing:border-box;
+  }
+
+.drawerwrapper.outofview{ 
+  left: -150%;
+  }
+
+.drawerbox{
+  border-radius: 10px;
+  background-color: var(--cardbg);
+  box-shadow: 0px 5px 20px #525151;
+}
+
+.drawerheader{
+    font-size: 38px;
+    text-align: center;
+    font-family: var(--titlefont);
+    width:100%;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 0px;
+}
+
+.drawercontent{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+}
 
 h1{
     margin:0em;
@@ -40,6 +79,12 @@ h2{
     margin:0em;
     font-family: var(--titlefont);
     font-size: 32px;
+}
+
+h3{
+  margin:0em;
+  font-family: var(--titlefont);
+  font-size: 24px;
 }
 
 body{
@@ -61,22 +106,24 @@ p.bonus{
   display: flex;
   justify-content: center;
   float:left;
-  width: 30%;
-  padding-top: 150px;
+  width: 35%;
+  padding: 150px 4px;
+  box-sizing:border-box;
   }
 
 
 .cardcol{
   float:left;
-  width: 66%;
+  width: 65%;
   margin:auto;
-  padding-top: 80px;
+  padding: 20px 4px;
+  box-sizing:border-box;
   }
 
 .incardcol{
   float:left;
   width:40%;
-  padding: 0% 5% 5%;
+  padding: 0% 5% 60px;
   }
 
 .cardcentertext{text-align: center;margin: 2em;}
@@ -100,7 +147,15 @@ p.bonus{
     padding: 5px 0px;
 
 }
-    
+
+.iconwrapper{
+  padding: 0% 5%;
+}
+
+img.icon{
+  cursor: pointer;
+  height: 32px;
+}
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -115,6 +170,7 @@ p.bonus{
   
 
 .button1{
+    cursor: pointer;
     height: 50px;
     background-color: var(--headercolor);
     border-radius: 10px;
@@ -134,4 +190,10 @@ p.bonus{
 .button1:active {
     transition-duration: 0s;
     box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 5px 10px 0 rgba(0,0,0,0.19);
+}
+
+.credsbox{ 
+  position: fixed;
+  bottom: 20px; 
+  right:20px  
 }

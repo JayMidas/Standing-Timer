@@ -9,9 +9,11 @@ let sitTimerIntervals;
 let sitTimerDisplay = document.getElementById('SitTime');
 
 let standTimerTotal = 0;
+let standSessionCounts = 0;
 let standTimerTotalDisplay = document.getElementById('StandTotal');
 
 let sitTimerTotal = 0;
+let sitSessionCounts = 0;
 let sitTimerTotalDisplay = document.getElementById('SitTotal');
 
 let stance = "standing"
@@ -37,7 +39,7 @@ let TextFlashInterval;
 let red = 1;
 let green = 1;
 
-// Button Functions
+// Change Stance Functions
 
 function changestance() {
     refreshStatus()
@@ -66,6 +68,8 @@ function refreshStatus() {
 
 function standToSit() {
     stance = "sitting"
+    sitSessionCounts++
+    $('#SitSessionsCount').text(sitSessionCounts)
     myButton.innerHTML = "Stand Up"
     stancetext.innerHTML = stancestem + stance;
     sitTimerTitle.innerHTML = "Current Sitting Session";
@@ -78,6 +82,8 @@ function standToSit() {
 
 function sitToStand() {
     stance = "standing";
+    standSessionCounts++;
+    $('#StandSessionsCount').text(standSessionCounts)
     myButton.innerHTML = "Sit Down"
     stancetext.innerHTML = stancestem + stance;
     sitTimerTitle.innerHTML = "Last Sitting Session";
@@ -175,5 +181,28 @@ function TextFlash(alpha) {
     }
     else if (alpha === "bonus") {
         $('#StandTime').toggleClass('bonus');
+    }
+}
+
+// UI Functions
+
+function closedrawer() {
+    $('#drawermain').addClass("outofview")
+}
+
+function drawerbutton() {
+    $('#drawermain').toggleClass("outofview")
+}
+
+function muteunmute() {
+    if (mute === true) {
+        mute = false;
+        $('#muteBttn').attr("src", "images/soundon.png")
+
+    }
+    else if (mute === false) {
+        mute = true;
+        $('#muteBttn').attr("src", "images/muted.png")
+
     }
 }
