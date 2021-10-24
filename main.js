@@ -43,7 +43,8 @@ let green = 1;
 
 function changestance() {
     refreshStatus()
-
+    $('#standingimg').toggleClass('transparent')
+    $('#sittingimg').toggleClass('transparent')
     if (stance !== "sitting") {
         standToSit();
     } else {
@@ -60,10 +61,7 @@ function refreshStatus() {
     clearInterval(TextFlashInterval)
     $('#SitTime').removeClass('warning');
     $('#StandTime').removeClass('bonus');
-    $('#standingimg').toggleClass('transparent');
-    $('#sittingimg').toggleClass('transparent');
     alarmtriggered = false;
-
 }
 
 function standToSit() {
@@ -78,6 +76,8 @@ function standToSit() {
     timeonclick = new Date().getTime();
     sitTimerTotalOnclick = sitTimerTotal;
     sitTimerIntervals = setInterval(updateSitTimer, 50);
+    $('body').removeClass('standingbg');
+    $('body').addClass('sittingbg');
 }
 
 function sitToStand() {
@@ -92,6 +92,10 @@ function sitToStand() {
     timeonclick = new Date().getTime();
     standTimerTotalOnclick = standTimerTotal;
     standTimerIntervals = setInterval(updateStandtimer, 50);
+    $('body').removeClass('sittingbg');
+    $('body').addClass('standingbg');
+
+
 }
 
 
@@ -197,12 +201,12 @@ function drawerbutton() {
 function muteunmute() {
     if (mute === true) {
         mute = false;
-        $('#muteBttn').attr("src", "images/soundon.png")
+        $('#muteBttn').attr("src", "images/volume-up.svg")
 
     }
     else if (mute === false) {
         mute = true;
-        $('#muteBttn').attr("src", "images/muted.png")
+        $('#muteBttn').attr("src", "images/volume-mute.svg")
 
     }
 }
