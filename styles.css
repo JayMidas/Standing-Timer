@@ -96,15 +96,11 @@ p.warning{
 p.bonus{
   color:var(--bonuscolor)}
 
-.outcardcol {
-  display: flex;
-  justify-content: center;
-  float:left;
-  width: 35%;
-  box-sizing:border-box;
-  }
+.contentwrapper{
+  transition:1.5s
+}
 
-.cardcentertext{text-align: center;}
+.cardcentertext{text-align: center; font-size: 32px;}
 
 .card{
   margin-top: 60px;

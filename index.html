@@ -17,7 +17,7 @@
     </div>
     <div class="container-fluid">
         <div class="row justify-content-end">
-            <div class="drawerwrapper outofview col-lg-4" id="drawermain">
+            <div class="drawerwrapper outofview col col-lg-4" id="drawermain">
                 <div class="card">
                     <div class="headerdiv">
                         <h1>Today's Stats</h1>
@@ -34,24 +34,27 @@
                             <p id="SitSessionsCount">0</p>
                         </div>
                     </div>
-                    <div class="row container justify-content-center">
-                        <div class="col-lg-4">
-                            <button class="button1" id="closedrawer" onclick="closedrawer()">Close</button>
+                    <div class="container-fluid">
+                        <div class="row container justify-content-center">
+                            <div class="col-lg-4">
+                                <button class="button1" id="closedrawer" onclick="closedrawer()">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-12">
+            <div class="contentwrapper col-lg-8 col-12">
                 <div class="card">
                     <div class="headerdiv cardheader">
                         <h1>Sitting Timer</h1>
                     </div>
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-2">
+                        <div class="row justify-content-between">
+                            <div class="col-2">
                                 <img class="icon" id="settingsBttn" src="images/gear.svg" onclick="drawerbutton()">
                                 <img class="icon" id="muteBttn" src="images/volume-up.svg" onclick="muteunmute()">
                             </div>
+                            <div class="col-2"> Score: </div>
                         </div>
                         <div class="row cardcentertext justify-content-center">
                             <div class="col">
@@ -59,11 +62,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="incardcol col-sm-6 col-12">
+                            <div class="incardcol col-md-6 col-12">
                                 <h2 id="SitTitle">Last Sitting Session</h2>
                                 <p id="SitTime">0:00:00</p>
                             </div>
-                            <div class="incardcol col-sm-6 col-12">
+                            <div class="incardcol col-md-6 col-12">
                                 <h2 id="StandTitle">Last Standing Session</h2>
                                 <p id="StandTime">00:00</p>
                             </div>

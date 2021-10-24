@@ -105,7 +105,7 @@ function sitToStand() {
 function updateSitTimer() {
     timenow = new Date().getTime();
     duration = timenow - timeonclick;
-    if (duration >= 2000 && !alarmtriggered) {
+    if (duration >= 3600000 && !alarmtriggered) {
         alarmtriggered = true
         document.title = 'Time to Stand!';
         alarm()
@@ -124,7 +124,7 @@ function updateSitTimer() {
 function updateStandtimer() {
     timenow = new Date().getTime();
     duration = timenow - timeonclick;
-    if (duration >= 2000 && !alarmtriggered) {
+    if (duration >= 120000 && !alarmtriggered) {
         alarmtriggered = true
         document.title = 'Extra Standing Time';
         alarm()
